@@ -3,6 +3,16 @@ import Sidebar from "./Sidebar.js";
 import "./dashboard.css";
 import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Legend
+} from "chart.js";
 import { Doughnut, Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct } from "../../actions/productAction";
@@ -11,6 +21,15 @@ import { getAllUsers } from "../../actions/userAction.js";
 import MetaData from "../layout/MetaData";
 
 const Dashboard = () => {
+  ChartJS.register(
+    LineElement,
+    ArcElement,
+    PointElement,
+    CategoryScale,
+    LinearScale,
+    Tooltip,
+    Legend
+  );
   const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.products);
