@@ -58,5 +58,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://192.168.29.97:4000"
+  "proxy": "http://192.168.29.97:4000",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6"
+  }
 }
